@@ -28,14 +28,6 @@ const dbServer = {
 	
 }
 
-const dbServer2 = {
-	host: process.env.DB_sqlHost2,
-	port: process.env.DB_sqlPort2,
-	user: process.env.DB_sqlUser2,
-	password: process.env.DB_sqlPassword2,
-	database: process.env.DB_sqlDatabase2,
-	
-}
 
 const forwardConfig = {
 	srcHost: process.env.srcHost,
@@ -116,50 +108,5 @@ var RequeteSql = new Promise((resolve, reject) => {
 	}).connect(tunnelConfig);
 });
 
-
-
-
-
-var RequeteSql2 = new Promise((resolve, reject) => {
-
-	sshclient.on('ready', () => {
-
-		sshclient.forwardOut(
-			forwardConfig.srcHost,
-			forwardConfig.srcPort,
-			forwardConfig.dstHost,
-			forwardConfig.dstPort,
-			(err, stream) => {
-
-				if (err) reject(err);
-
-				const updatedDbServer = {
-
-					...dbServer2,
-					
-
-					stream
-
-				};
-
-				const connection = mysqldb.createConnection(updatedDbServer);
-
-				connection.connect((error) => {
-
-					if (error) {
-
-						reject(error);
-
-					}
-
-					resolve(connection);
-					
-
-				});
-			});
-	}).connect(tunnelConfig);
-});
-
 exports.RequeteSql = RequeteSql;
-exports.RequeteSql2 = RequeteSql2;
 exports.RequeteOracle = RequeteOracle;

@@ -16,7 +16,7 @@ var suppr = async function Suppression(Array = [], table = "") {
 				table: table,
 				condition: {
 					// TODO: add condition (A variable that is never twice the same for each line) exemple Contrat: Array[i].Contrat
-					Contrat: Array[i].Contrat
+					Contrat: Array[i].ElemToChange
 				}
 			})
 			await Connection.RequeteSql.then( (connection) => {connection.query(requete.query);});

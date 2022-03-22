@@ -103,7 +103,7 @@ var Comparer = async function Comparer(table1 = "undefined", table2 = "undefined
 				var i = 0;
 				while (i < Array1.length) {
 					const Elem = Array1[i];
-					if (Array2.find(nameTable1 => nameTable1.Contrat === Elem.Contrat) === undefined) {
+					if (Array2.find(nameTable1 => nameTable1.ElemToChange === Elem.ElemToChange) === undefined) {
 						ElemToAdd.push(Elem);
 						Array1.splice(i, 1);
 
@@ -118,7 +118,7 @@ var Comparer = async function Comparer(table1 = "undefined", table2 = "undefined
 				i = 0;
 				while (i < Array2.length) {
 					const Elem = Array2[i];
-					if (Array1.find(nameTable2 => nameTable2.Contrat === Elem.Contrat) === undefined) {
+					if (Array1.find(nameTable2 => nameTable2.ElemToChange === Elem.ElemToChange) === undefined) {
 						ElemToDelete.push(Elem);
 						Array2.splice(i, 1);
 

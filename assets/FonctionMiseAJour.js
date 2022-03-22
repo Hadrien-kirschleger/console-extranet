@@ -19,17 +19,15 @@ var MiseAJour = async function MiseAJour(Array = [], table = "") {
 				table: table,
 				condition: {
 					// TODO: add condition (A variable that is never twice the same for each line) exemple Contrat: Array[i].Contrat
-					Contrat: Array[i].Contrat
+					ElemToChangeUnique: Array[i].ElemToChangeUnique
 				},
 				modifier: {
 					// TODO add all variable compared by the app que
 					
-					Nom : Array[i].Nom,
-					Prenom : Array[i].Prenom,
-					Contrat : Array[i].Contrat,
-					email : Array[i].email,
-					phone : Array[i].phone,
-					address : Array[i].address
+					Elem1 : Array[i].Elem1,
+					Elem2 : Array[i].Elem2,
+					Elem3 : Array[i].Elem3,
+					Elem4 : Array[i].Elem4,
 
 				}
 
